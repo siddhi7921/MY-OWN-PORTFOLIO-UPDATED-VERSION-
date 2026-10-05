@@ -27,7 +27,7 @@ If your Python installation uses the Windows launcher, run `py -m http.server 80
 ## Portfolio Features
 
 - Responsive profile, project, skills, education, achievement, resume, and contact sections.
-- Seven featured projects, including the Nexora AI case study.
+- Eight selected projects with code links and local-run labels where a working demo is unavailable.
 - Project filters and skill selectors that highlight related projects using existing project metadata.
 - SITARA, a multilingual portfolio assistant with curated responses. It is not connected to a live LLM.
 - Recruiter Mode, light/dark themes, and a Ctrl/Cmd+K command palette.
@@ -41,9 +41,11 @@ If your Python installation uses the Windows launcher, run `py -m http.server 80
 | `public/index.html` | Portfolio structure, content, metadata, and local assets |
 | `public/styles.css` | Responsive layout, themes, and visual styling |
 | `public/main.js` | Project data, GitHub fetch, assistant, filters, themes, and navigation interactions |
+| `public/favicon.svg` | Custom portfolio favicon |
+| `public/og-preview.png` | 1200 × 630 social preview image |
 | `smoke-test.js` | Static regression checks for portfolio content and behavior hooks |
 | `netlify.toml` | Static-site publish directory and build settings |
-| `public/profile.jpe` | Profile image and favicon |
+| `public/profile.jpe` | Profile photo |
 | `public/about-profile.png` | About-section image |
 | `public/Siddhinath_Chakraborty_ATS_Resume.docx` | Resume linked from the portfolio |
 

@@ -196,3 +196,29 @@ body[data-theme="dark"] .featured-card:hover,body[data-theme="dark"] .project-ca
 .profile-visual .ai-core:hover,.profile-visual .ai-core:focus-visible{transform:translateY(-2px);box-shadow:0 10px 24px rgba(24,48,43,.17)}
 .profile-visual .ai-core:hover strong,.profile-visual .ai-core:hover small,.profile-visual .ai-core:focus-visible strong,.profile-visual .ai-core:focus-visible small{opacity:1}
 @media(min-width:901px) and (max-width:1150px){.hero-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.hero-actions .button{justify-content:center;white-space:nowrap}}
+.hero h1{max-width:10ch;font-size:68px;line-height:.98;text-transform:none;overflow-wrap:normal}
+.hero-role{max-width:34ch;margin:18px 0 10px;color:var(--coral);font:600 23px/1.3 var(--sans);letter-spacing:0;text-transform:none}
+.hero-lede{margin:0;color:var(--muted);font:500 13px/1.6 var(--mono);letter-spacing:0}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.featured-card,.project-card,.github-repo-card{min-width:0}
+.featured-card h3,.project-card h3,.github-repo-card h3{overflow-wrap:anywhere}
+.featured-card>p,.project-card>p,.github-repo-card>p{min-height:0}
+.project-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:17px}
+.project-demo,.project-code{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:8px 11px;border:1px solid var(--ink);color:var(--ink);font:500 10px var(--mono);text-decoration:none;text-transform:uppercase}
+.project-demo{background:var(--ink);color:var(--paper)}
+.project-demo:hover,.project-code:hover{border-color:var(--coral);background:var(--coral);color:#fff}
+.local-only{color:var(--muted);font:9px var(--mono);text-transform:uppercase}
+.milestone-entry{grid-column:1/-1;display:grid;gap:7px}
+.milestone-badge{font:600 14px/1.4 var(--mono);color:var(--ink)}
+.milestone-entry small{font:10px var(--mono);color:var(--muted)}
+.nexora-result{margin:14px 0 0;padding:14px 0;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
+.nexora-result strong{display:block;margin-bottom:5px;color:var(--coral);font:9px var(--mono);letter-spacing:.06em}
+.contact-footer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:58px max(6vw,32px);background:var(--ink);color:var(--paper)}
+.contact-footer .eyebrow{margin-bottom:10px;color:var(--lime)}
+.contact-footer h2{max-width:18ch;margin:0;font-size:42px;line-height:1.1}
+.contact-actions{display:flex;flex-wrap:wrap;gap:10px}
+.contact-actions .button{min-width:100px;justify-content:center}
+.contact-footer>small{grid-column:1/-1;color:#a6b5ae;font:9px var(--mono)}
+.contact-footer .button-outline{border-color:rgba(244,246,241,.5);color:var(--paper)}
+@media(max-width:600px){.hero h1{max-width:11ch;font-size:44px;line-height:1.02}.hero-role{font-size:20px}.hero-lede{font-size:11px}.hero-actions{display:grid;grid-template-columns:1fr;gap:9px}.hero-actions .button{justify-content:center}.contact-footer{grid-template-columns:1fr;padding:45px 22px}.contact-footer h2{font-size:32px}.contact-footer>small{grid-column:auto}.contact-actions{display:grid;grid-template-columns:1fr}.project-actions{gap:8px}.project-demo,.project-code{min-height:36px}}
+@media(max-width:600px){.hero{grid-template-columns:minmax(0,1fr) 88px;grid-template-rows:min-content min-content min-content min-content;align-items:start;gap:12px;padding:34px 22px;min-height:0}.hero-copy{display:contents}.hero h1{grid-area:1/1/2/2;max-width:none;font-size:31px;line-height:1.02}.hero-role{grid-area:2/1/3/2;margin:0;font-size:16px}.hero-lede{grid-area:3/1/4/2;font-size:9px}.hero-actions{grid-area:4/1/5/2;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:2px}.hero-actions .button{min-width:0;padding:10px 7px;font-size:9px;white-space:normal}.hero-visual{grid-area:1/2/5/3;min-width:0;margin:0;padding:0}.hero-visual .visual-top,.hero-visual .profile-details,.hero-visual .profile-focus,.hero-visual .ai-core,.portrait-stamp{display:none!important}.portrait-frame{height:142px;margin:0}.contact-actions{grid-template-columns:1fr}}
