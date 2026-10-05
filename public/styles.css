@@ -211,6 +211,7 @@ body[data-theme="dark"] .featured-card:hover,body[data-theme="dark"] .project-ca
 .milestone-entry{grid-column:1/-1;display:grid;gap:7px}
 .milestone-badge{font:600 14px/1.4 var(--mono);color:var(--ink)}
 .milestone-entry small{font:10px var(--mono);color:var(--muted)}
+iframe[title="Powered by Netlify"]{display:none!important}
 .nexora-result{margin:14px 0 0;padding:14px 0;border-top:1px solid var(--line);font-size:12px;line-height:1.6}
 .nexora-result strong{display:block;margin-bottom:5px;color:var(--coral);font:9px var(--mono);letter-spacing:.06em}
 .contact-footer{display:grid;grid-template-columns:1fr auto;align-items:center;gap:24px;padding:58px max(6vw,32px);background:var(--ink);color:var(--paper)}
