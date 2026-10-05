@@ -1,8 +1,12 @@
 const fs = require('fs');
+const vm = require('vm');
 
 const html = fs.readFileSync('public/index.html', 'utf8');
 const js = fs.readFileSync('public/main.js', 'utf8');
 const css = fs.readFileSync('public/styles.css', 'utf8');
+const projectBoundary = js.indexOf('const projects =');
+if (projectBoundary < 0) throw new Error('Cannot locate the featured project configuration.');
+const featuredProjects = vm.runInNewContext(`${js.slice(0, projectBoundary)}\nfeaturedProjects;`, {}, { timeout: 1000 });
 
 const checks = [
   ['github-live section', html.includes('github-live')],
@@ -25,7 +29,15 @@ const checks = [
   ['command palette retains direct actions', html.includes('data-action="recruiter"') && html.includes('data-action="linkedin"') && html.includes('data-action="theme"')],
   ['project lab is visible', css.includes('.lab-section{display:block}')],
   ['selected project cards have demo or local-run paths and code', js.includes('▶ Live Demo') && js.includes('Local run only') && js.includes('&lt;/&gt; Code')],
-  ['unavailable demo endpoints are not published as live links', !js.includes('streamlit.app') && !js.includes('ai-agent-sigma-ochre.vercel.app')],
+  ['demo links are absent or public HTTPS URLs', featuredProjects.every(project => {
+    if (project.demo === null) return true;
+    try {
+      const url = new URL(project.demo);
+      return url.protocol === 'https:' && !url.username && !url.password;
+    } catch {
+      return false;
+    }
+  })],
   ['placeholder project and certification copy removed', !html.includes('SentinelX AI') && !js.includes('SentinelX AI') && !html.includes('Repository pending') && !html.includes('cert-placeholder') && !html.includes('COMING<br />IN NEXT')],
   ['project lab is curated to eight entries', js.includes("index:'08'") && html.includes('Selected projects / 08')],
   ['intro is persistent and non-blocking by default', js.includes("localStorage.getItem('siddhinath-intro-seen')") && css.includes('.intro-screen{opacity:0;visibility:hidden;pointer-events:none')]

@@ -28,6 +28,7 @@ If your Python installation uses the Windows launcher, run `py -m http.server 80
 
 - Responsive profile, project, skills, education, achievement, resume, and contact sections.
 - Eight selected projects with code links and local-run labels where a working demo is unavailable.
+- Deployment readiness, verified access blockers, and the approved untrained Gradio prototype are documented in `deployments/README.md`. No new public demo is live yet.
 - Project filters and skill selectors that highlight related projects using existing project metadata.
 - SITARA, a multilingual portfolio assistant with curated responses. It is not connected to a live LLM.
 - Recruiter Mode, light/dark themes, and a Ctrl/Cmd+K command palette.
