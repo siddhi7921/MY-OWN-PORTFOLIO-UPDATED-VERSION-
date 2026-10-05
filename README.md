@@ -4,23 +4,25 @@ A static personal portfolio for Siddhinath Chakraborty, a CSE (AI & ML) student 
 
 ## Run Locally
 
-### Windows launcher
+## Netlify Deployment
 
-Double-click `start-portfolio.bat`. It serves the site at `http://127.0.0.1:8001/` when Python is available. If Python is unavailable or the server does not start, it opens `index.html` directly.
+The deployable site files are in `public/`. `netlify.toml` sets that folder as the publish directory and disables the build command because this is a plain static site. Deploy the repository without installing packages or running a build. Netlify serves `public/index.html` at the site root; the original ZIP archive is not published.
+
+Navigation and project case studies use URL fragments, so they do not require a catch-all redirect.
 
 ### Open the HTML directly
 
-Open `index.html` in a browser. The portfolio content and interactions work without a server. Voice input depends on browser support and a secure context, so use localhost or HTTPS for that feature.
+Open `public/index.html` in a browser. The portfolio content and interactions work without a server. Voice input depends on browser support and a secure context, so use localhost or HTTPS for that feature.
 
 ### Start a local server manually
 
 From the project folder, run:
 
 ```powershell
-python -m http.server 8001 --bind 127.0.0.1
+python -m http.server 8001 --bind 127.0.0.1 --directory public
 ```
 
-If your Python installation uses the Windows launcher, run `py -m http.server 8001 --bind 127.0.0.1` instead. Then visit `http://127.0.0.1:8001/`.
+If your Python installation uses the Windows launcher, run `py -m http.server 8001 --bind 127.0.0.1 --directory public` instead. Then visit `http://127.0.0.1:8001/`.
 
 ## Portfolio Features
 
@@ -36,14 +38,14 @@ If your Python installation uses the Windows launcher, run `py -m http.server 80
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Portfolio structure, content, metadata, and local assets |
-| `styles.css` | Responsive layout, themes, and visual styling |
-| `main.js` | Project data, GitHub fetch, assistant, filters, themes, and navigation interactions |
+| `public/index.html` | Portfolio structure, content, metadata, and local assets |
+| `public/styles.css` | Responsive layout, themes, and visual styling |
+| `public/main.js` | Project data, GitHub fetch, assistant, filters, themes, and navigation interactions |
 | `smoke-test.js` | Static regression checks for portfolio content and behavior hooks |
-| `start-portfolio.bat` | Windows launcher with a direct-file fallback |
-| `profile.jpe` | Profile image and favicon |
-| `about-profile.png` | About-section image |
-| `Siddhinath_Chakraborty_ATS_Resume.docx` | Resume linked from the portfolio |
+| `netlify.toml` | Static-site publish directory and build settings |
+| `public/profile.jpe` | Profile image and favicon |
+| `public/about-profile.png` | About-section image |
+| `public/Siddhinath_Chakraborty_ATS_Resume.docx` | Resume linked from the portfolio |
 
 ## Validation
 
@@ -51,5 +53,5 @@ Run these commands from the project folder:
 
 ```powershell
 node smoke-test.js
-node --check main.js
+node --check public/main.js
 ```
